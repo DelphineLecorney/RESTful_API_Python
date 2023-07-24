@@ -17,6 +17,7 @@ def connectDatabase():
         print('Error connecting to the database', error)
     return None
 
+# Function for close connection to the database
 def closeConnection(connection):
     if connection.open:
         connection.close()
