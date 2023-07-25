@@ -1,9 +1,11 @@
-from flask import Flask
+# Import app object and database from config module
 from config.config import app, db
 
+# Import the post_routes blueprint from the routes.postRoutes module
 from routes.postRoutes import post_routes as api_bp
 
 from models.Post import Post
+Post()
 
 app.register_blueprint(api_bp, url_prefix='/api')
 
