@@ -1,5 +1,4 @@
-# Import module db for app(sqlalchemy)
-from app import db
+from config.config import db
 
 # Create the post model
 class Post(db.Model):
