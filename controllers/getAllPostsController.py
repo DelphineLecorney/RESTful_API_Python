@@ -3,7 +3,6 @@ from flask import jsonify
 from models.Post import Post
 from config.config import app
 
-
 # Define a route to retrieve all items
 @app.route('/api/v1/posts', methods=['GET'])
 

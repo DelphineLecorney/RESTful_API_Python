@@ -1,5 +1,9 @@
 from flask import jsonify
 from models.Post import Post
+from config.config import app
+
+# Define a route
+@app.route('/api/v1/posts', methods=['GET'])
 
 # Function for retrieve post by ID
 def getPostById(post_id):

@@ -1,3 +1,0 @@
-from controllers.createPostController import createPost
-from controllers.getAllPostsController import getAllPosts
-from controllers.getPostByIdController import getPostById
