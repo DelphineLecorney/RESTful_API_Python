@@ -13,6 +13,10 @@ def createPost():
     body = data.get('body')
     author = data.get('author')
 
+    isExistPost = Post.query.filter_by(title=title, body=body, author=author).first()
+    if isExistPost:
+        return jsonify({'message:' 'Post withe the same data already exists'}), 409
+
     new_post = Post(title=title, body=body, author=author)
 
     # Add the new Post object to the database session
