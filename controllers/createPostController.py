@@ -2,6 +2,7 @@
 from flask import jsonify, request
 from models.Post import Post
 from config.config import app, db
+from utils.validations import isNonEmptyString
 
 # Route for create a new post
 @app.route('/api/v1/posts', methods=['POST'])
@@ -17,6 +18,16 @@ def createPost():
     isExistPost = Post.query.filter_by(title=title, body=body, author=author).first()
     if isExistPost:
         return jsonify({'message:' 'Post withe the same data already exists'}), 409
+
+    validations = {
+    'title': isNonEmptyString,
+    'body': isNonEmptyString,
+    'author': isNonEmptyString
+    }
+
+    for i, validation in validations.items():
+        if not validation(data.get(i)):
+            return jsonify({'error': 'The title field is empty or invalid'})  
 
     new_post = Post(title=title, body=body, author=author)
 

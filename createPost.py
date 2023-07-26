@@ -21,6 +21,11 @@ posts_data = [
         'title': 'My third Title',
         'body': 'The third Body of the new post.',
         'author': 'Encore moi meme'
+    },
+    {
+        'title': 'Test validation',
+        'body': '',
+        'author': 'Encore moi meme'
     }
 ]
 

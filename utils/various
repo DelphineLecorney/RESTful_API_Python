@@ -6,19 +6,22 @@ source myenv/Scripts/activate
 To start the mvc : 
 python app.py
 
-To display the data :
-curl -X GET http://localhost:5000/api/v1/posts
-
-To delete the terminal without view :
-curl -X DELETE http://localhost:5000/api/v1/posts/ID
-
 To create datas for test:
 I created a createPost.py file that creates json files for testing 
 tests to create posts that can be deleted, updated or
 be deleted, updated
 
+To display the data :
+curl -X GET http://localhost:5000/api/v1/posts
+
+To create a post :
+curl -X POST -H "Content-Type: application/json" -d '{"title": "Mon titre", "body": "Contenu du post", "author": "Auteur", "email": "auteur@example.com"}' http://127.0.0.1:5000/api/v1/posts
+
+To delete a post in the terminal:
+curl -X DELETE http://localhost:5000/api/v1/posts/ID
+
 To update :
-curl -X PUT -H "Content-Type: application/json" -d '{"title":"Nouveau titre pour le post","body":"Nouveau contenu du post.","author":"Nouvel auteur"}' http://127.0.0.1:5000/api/v1/posts/9
+curl -X PUT -H "Content-Type: application/json" -d '{"title": "Nouveau titre", "body": "Nouveau contenu", "author": "Nouvel auteur"}' http://127.0.0.1:5000/api/v1/posts/ID
 
 
 HTTP response status codes indicate whether a specific HTTP 
