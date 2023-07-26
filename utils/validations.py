@@ -14,7 +14,6 @@ def isValidTitle(title):
 def isValidAuthor(author):
     return isinstance(author, str) and len(author) <= 100
 
-
 def confirmDelete(message, delete_callback):
     confirm = request.args.get('confirm')
     if not confirm or confirm.lower() != 'true':

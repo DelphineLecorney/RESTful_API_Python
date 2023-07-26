@@ -1,7 +1,7 @@
 import requests
 import json
 
-# File for test
+# Files for test
 
 
 url = 'http://127.0.0.1:5000/api/v1/posts'
@@ -39,3 +39,26 @@ for data in posts_data:
         print('Error creating Post:', response.json)
     else:
         print('Error creating Post:', response.text)
+
+
+# def update_post(post_id):
+#     url = f'http://127.0.0.1:5000/api/post/{post_id}'
+
+#     data = {
+#         'title': 'New title',
+#         'body': 'New content.',
+#         'author': 'New author'
+#     }
+
+#     response = requests.put(url, json=data)
+
+#     if response.status_code == 200:
+#         print("Post successfully updated !")
+#         print(response.json())
+#     elif response.status_code == 404:
+#         print("Post not found.")
+#     else:
+#         print("Error updating post.")
+#         print(response.json())
+
+# update_post(ID)
