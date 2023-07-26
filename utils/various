@@ -1,0 +1,36 @@
+Readme notes
+
+To activate myenv : 
+source myenv/Scripts/activate
+
+To start the mvc : 
+python app.py
+
+To display the data :
+curl -X GET http://localhost:5000/api/v1/posts
+
+To delete the terminal without view :
+curl -X DELETE http://localhost:5000/api/v1/posts/11
+
+To create datas for test:
+I created a createPost.py file that creates json files for testing 
+tests to create posts that can be deleted, updated or
+be deleted, updated
+
+
+HTTP response status codes indicate whether a specific HTTP 
+
+Status Code: 404 
+Not Found
+Description: The server could not find the requested resource.
+Usage in Code: Returned when attempting to delete a post with an ID that does not exist in the database. It indicates that the post was not found and, therefore, cannot be deleted.
+
+Status Code: 200
+Description: The request was successful, and the server has returned the requested data.
+Usage in Code: Returned when a post is successfully deleted from the database. It indicates that the deletion process was successful, and the post was removed.
+
+Status Code: 500
+Description: The server encountered an unexpected condition that prevented it from fulfilling the request.
+Usage in Code: Returned if there is an error during the deletion process that is not expected or handled explicitly. This could include database errors or other unexpected exceptions.
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

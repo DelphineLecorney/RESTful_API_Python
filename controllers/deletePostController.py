@@ -4,9 +4,13 @@ from config.config import app, db
 
 # Define a route to delete a post by its ID
 @app.route('/api/v1/posts/<int:post_id>', methods=['DELETE'])
+
+# Check if the post with the given ID exists in the database
 def deletePostById(post_id):
+    # Retrieve the post from the database using the provided post_id
     post = Post.query.get(post_id)
 
+    # Check if the post with the given ID exists in the database
     if post is None:
         return jsonify({'message': 'Post not found'}), 404
 
