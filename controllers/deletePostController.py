@@ -1,6 +1,7 @@
 from flask import jsonify
 from models.Post import Post
 from config.config import app, db
+from utils.validations import confirmDelete
 
 # Define a route to delete a post by its ID
 @app.route('/api/v1/posts/<int:post_id>', methods=['DELETE'])
@@ -14,10 +15,15 @@ def deletePostById(post_id):
     if post is None:
         return jsonify({'message': 'Post not found'}), 404
 
-    try:
-        db.session.delete(post)
-        db.session.commit()
-        return jsonify({'message': 'Post successfully deleted'}), 200
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({'error': 'Error deleting post.', 'details': str(e)}), 500
+    # Function for ensure to delete a post
+    def delete_callback():
+
+        try:
+            db.session.delete(post)
+            db.session.commit()
+            return jsonify({'message': 'Post successfully deleted'}), 200
+        except Exception as e:
+            db.session.rollback()
+            return jsonify({'error': 'Error deleting post.', 'details': str(e)}), 500
+        
+    return confirmDelete('Are you sure to delete this post ?', delete_callback)

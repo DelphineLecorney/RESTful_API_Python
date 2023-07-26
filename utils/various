@@ -20,6 +20,9 @@ curl -X POST -H "Content-Type: application/json" -d '{"title": "Mon titre", "bod
 To delete a post in the terminal:
 curl -X DELETE http://localhost:5000/api/v1/posts/ID
 
+To confirm to delete :
+curl -X DELETE "http://localhost:5000/api/v1/posts/ID?confirm=true"
+
 To update :
 curl -X PUT -H "Content-Type: application/json" -d '{"title": "Nouveau titre", "body": "Nouveau contenu", "author": "Nouvel auteur"}' http://127.0.0.1:5000/api/v1/posts/ID
 

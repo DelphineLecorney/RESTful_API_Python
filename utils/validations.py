@@ -1,3 +1,5 @@
+from flask import jsonify, request
+
 # Functions for check before validations
 
 # strip() : The method removes any leading, and trailing whitespaces.
@@ -12,4 +14,11 @@ def isValidTitle(title):
 def isValidAuthor(author):
     return isinstance(author, str) and len(author) <= 100
 
+
+def confirmDelete(message, delete_callback):
+    confirm = request.args.get('confirm')
+    if not confirm or confirm.lower() != 'true':
+        return jsonify({'message': message, 'confirm_delete': True})
+    
+    return delete_callback()
 
