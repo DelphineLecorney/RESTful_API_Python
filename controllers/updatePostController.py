@@ -4,7 +4,7 @@ from models.Post import Post
 from config.config import app, db
 
 # Define a route to retrieve all items
-@app.route('/api/v1/posts', methods=['PUT'])
+@app.route('/api/v1/posts/<int:post_id>', methods=['PUT'])
 
 #Function for update a post
 def updatePOst(post_id):
@@ -19,7 +19,7 @@ def updatePOst(post_id):
 
     try:
         db.session.commit()
-        return jsonify({'message', 'The post was successfully updated'}), 200
+        return jsonify({'message': 'The post was successfully updated'}), 200
     except Exception as e:
         db.session.rollback()
         return jsonify({'error':'Error updating post', 'details': str(e)}), 500
