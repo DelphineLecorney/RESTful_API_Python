@@ -18,6 +18,7 @@ def updatePOst(post_id):
     post.body = data.get('body', post.body)
     post.author = data.get('author', post.author)
 
+    # Check if the right input
     validations = {
         'title': isNonEmptyString,
         'body': isNonEmptyString,
@@ -26,8 +27,7 @@ def updatePOst(post_id):
 
     for i, validation in validations.items():
         if not validation(data.get(i)):
-            return jsonify({'error': 'The title field is empty or invalid'})  
-
+            return jsonify({'error': 'The title {i} is empty or invalid'})  
 
     try:
         db.session.commit()

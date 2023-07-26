@@ -1,6 +1,7 @@
-# Function for check if there's a string or not
+# Functions for check before validations
 
 # strip() : The method removes any leading, and trailing whitespaces.
+# isinstance() : The method ensure that the right input
 
 def isNonEmptyString(s):
     return isinstance(s, str) and len(s.strip) > 0
@@ -10,4 +11,5 @@ def isValidTitle(title):
 
 def isValidAuthor(author):
     return isinstance(author, str) and len(author) <= 100
+
 

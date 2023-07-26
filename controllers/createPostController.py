@@ -15,10 +15,12 @@ def createPost():
     body = data.get('body')
     author = data.get('author')
 
+    # Check if post exists before validation for prevent creation of duplicate posts
     isExistPost = Post.query.filter_by(title=title, body=body, author=author).first()
     if isExistPost:
         return jsonify({'message:' 'Post withe the same data already exists'}), 409
 
+    # Check if it's the right input
     validations = {
     'title': [isNonEmptyString, isValidTitle],
     'body': isNonEmptyString,
