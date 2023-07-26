@@ -15,7 +15,7 @@ To display the data :
 curl -X GET http://localhost:5000/api/v1/posts
 
 To create a post :
-curl -X POST -H "Content-Type: application/json" -d '{"title": "Mon titre", "body": "Contenu du post", "author": "Auteur", "email": "auteur@example.com"}' http://127.0.0.1:5000/api/v1/posts
+curl -X POST -H "Content-Type: application/json" -d '{"title": "Mon titre", "body": "Contenu post" "author": "Auteur"}' http://127.0.0.1:5000/api/v1/posts
 
 To delete a post in the terminal:
 curl -X DELETE http://localhost:5000/api/v1/posts/ID
