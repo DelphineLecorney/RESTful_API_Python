@@ -82,12 +82,13 @@ The API will now be accessible at http://127.0.0.1:5000/api.
 📝 Endpoints
 The following endpoints are available for the posts resource:
 
->GET /api/v1/posts: Get all posts.
-GET /api/v1/posts/{id}: Get a specific post by ID.
-POST /api/v1/posts: Create a new post.
-PUT /api/v1/posts/{id}: Update a post by ID.
+>GET /api/v1/posts: Get all posts.<br><br><br><br>
+GET /api/v1/posts/{id}: Get a specific post by ID.<br><br><br>
+POST /api/v1/posts: Create a new post.<br><br>
+PUT /api/v1/posts/{id}: Update a post by ID.<br>
 DELETE /api/v1/posts/{id}: Delete a post by ID.
 <br>
+
 📝 Usage
 
 >To use the API, you can send HTTP requests to the endpoints mentioned above using tools like cURL or Postman. Below is an example of using cURL to create a new post:
