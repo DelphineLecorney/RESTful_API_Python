@@ -2,7 +2,7 @@
 <h1 align="center">⭐️ Restful_Api ⭐️</h1>
 
 <h2 align="center">Hi , I'm Delphine  👋</h2>  
-<br>
+
 <h3 align="center">This repository is a python exercise carried out during Becode training   </h3> <br>
 
 * <h2 align="left"> Introduction</h2> 
@@ -87,7 +87,7 @@ GET /api/v1/posts/{id}: Get a specific post by ID.
 POST /api/v1/posts: Create a new post.
 PUT /api/v1/posts/{id}: Update a post by ID.
 DELETE /api/v1/posts/{id}: Delete a post by ID.
-
+<br>
 📝 Usage
 
 >To use the API, you can send HTTP requests to the endpoints mentioned above using tools like cURL or Postman. Below is an example of using cURL to create a new post:
@@ -128,7 +128,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 <img src="https://github.com/DelphineLecorney/Template-readme/blob/main/PICTURES_read_me_/myphpadmin.png" alt="phpmyadmin" height="60" width="60" />   
  
-![python.png](:/df2f0e03fb864b33978cbb44fdab3d23)
+<img src="https://github.com/DelphineLecorney/photos-images-readme/blob/main/images/python.png" alt="Python"/>
 
 </p>
 <h2 align="left"> Contact me : </h2> <a href="https://www.linkedin.com/in/delphine-lecorney/" target="_blank"><br /><sub><b>Delphine</b></sub>
